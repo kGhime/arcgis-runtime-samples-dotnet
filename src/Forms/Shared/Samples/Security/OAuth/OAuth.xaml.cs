@@ -39,11 +39,23 @@ namespace ArcGISRuntime.Samples.OAuth
            "Authentication, Security, OAuth")]
     public partial class OAuth : ContentPage, IOAuthAuthorizeHandler
     {
+        //// Constants for OAuth-related values.
+        //// - The URL of the portal to authenticate with
+        //private const string ServerUrl = "https://www.arcgis.com/sharing/rest";
+        //// - The Client ID for an app registered with the server (the ID below is for a public app created by the ArcGIS Runtime team).
+        //private const string AppClientId = @"lgAdHkYZYlwwfAhC";
+        //// - An optional client secret for the app (only needed for the OAuthAuthorizationCode authorization type).
+        //private const string ClientSecret = "";
+        //// - A URL for redirecting after a successful authorization (this must be a URL configured with the app).
+        //private const string OAuthRedirectUrl = @"my-ags-app://auth";
+        //// - The ID for a web map item hosted on the server (the ID below is for a traffic map of Paris).
+        //private const string WebMapId = "e5039444ef3c48b8a8fdc9227f9be7c1";
+
         // Constants for OAuth-related values.
         // - The URL of the portal to authenticate with
-        private const string ServerUrl = "https://www.arcgis.com/sharing/rest";
+        private const string ServerUrl = "https://www.kghime.com/portal/sharing/rest";
         // - The Client ID for an app registered with the server (the ID below is for a public app created by the ArcGIS Runtime team).
-        private const string AppClientId = @"lgAdHkYZYlwwfAhC";
+        private const string AppClientId = @"mwhsaTc9FyCwGweF";
         // - An optional client secret for the app (only needed for the OAuthAuthorizationCode authorization type).
         private const string ClientSecret = "";
         // - A URL for redirecting after a successful authorization (this must be a URL configured with the app).
