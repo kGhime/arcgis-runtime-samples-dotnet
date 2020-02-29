@@ -35,7 +35,9 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
         private void Initialize()
         {
             // Create the map
-            Map myMap = new Map(BasemapType.Oceans, 56.075844, -2.681572, 14);
+            Map myMap = new Map(Basemap.CreateImagery());
+            //Map myMap = new Map(BasemapType.Oceans, 34.0536200, -117.1836500, 14);
+            //Map myMap = new Map(BasemapType.Oceans, 56.075844, -2.681572, 14);
 
             // Add the map to the map view
             MyMapView.Map = myMap;
@@ -44,10 +46,10 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
             MyMapView.GraphicsOverlays.Add(_overlay);
 
             // Call functions to create the graphics
-            CreatePoints();
-            CreatePolygon();
-            CreatePolyline();
-            CreateText();
+            //CreatePoints();
+            //CreatePolygon();
+            //CreatePolyline();
+            //CreateText();
 
             // Update the extent to encompass all of the symbols
             SetExtent();
@@ -158,7 +160,9 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
             GraphicCollection myGraphicCollection = _overlay.Graphics;
 
             // Create a new envelope builder using the same spatial reference as the graphics
-            EnvelopeBuilder myEnvelopeBuilder = new EnvelopeBuilder(SpatialReferences.Wgs84);
+            //EnvelopeBuilder myEnvelopeBuilder = new EnvelopeBuilder(SpatialReferences.Wgs84);
+
+            EnvelopeBuilder myEnvelopeBuilder = new EnvelopeBuilder(-117.208662237806, 34.0728534762229, -117.156880975828, 34.0321082319642, SpatialReferences.Wgs84);
 
             // Loop through each graphic in the graphic collection
             foreach (Graphic oneGraphic in myGraphicCollection)
@@ -168,11 +172,18 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
             }
 
             // Expand the envelope builder by 30%
-            myEnvelopeBuilder.Expand(1.3);
+            //myEnvelopeBuilder.Expand(1.3);
 
             // Adjust the viewable area of the map to encompass all of the graphics in the
             // graphics overlay plus an extra 30% margin for better viewing
             MyMapView.SetViewpointAsync(new Viewpoint(myEnvelopeBuilder.Extent));
+
+
+            //Envelope initialLocation = new Envelope(
+            //    4038588.66806427, -13047608.5968734, -13041844.3331573, 4033114.19246949,
+            //    SpatialReferences.Wgs84);
+
+            //MyMapView.SetViewpointAsync(new Viewpoint(initialLocation));
         }
     }
 }
