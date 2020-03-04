@@ -35,7 +35,7 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
         private void Initialize()
         {
             // Create the map
-            Map myMap = new Map(Basemap.CreateImagery());
+            Map myMap = new Map(Basemap.CreateOpenStreetMap());
             //Map myMap = new Map(BasemapType.Oceans, 34.0536200, -117.1836500, 14);
             //Map myMap = new Map(BasemapType.Oceans, 56.075844, -2.681572, 14);
 
@@ -46,7 +46,7 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
             MyMapView.GraphicsOverlays.Add(_overlay);
 
             // Call functions to create the graphics
-            //CreatePoints();
+            CreatePoints();
             //CreatePolygon();
             //CreatePolyline();
             //CreateText();
@@ -61,16 +61,34 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
             SimpleMarkerSymbol redCircleSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbolStyle.Circle, Color.FromArgb(0xFF, 0xFF, 0x00, 0x00), 10);
 
             // Create graphics and add them to graphics overlay
-            Graphic graphic = new Graphic(new MapPoint(-2.72, 56.065, SpatialReferences.Wgs84), redCircleSymbol);
+
+            var text1 = new TextSymbol("AAAA", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            var text2 = new TextSymbol("BBBB", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            var text3 = new TextSymbol("CCCC", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            var text4 = new TextSymbol("DDDD", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            var text5 = new TextSymbol("EEEE", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+
+
+            //Graphic graphic = new Graphic(new MapPoint(-117.1842782, 34.0535806, SpatialReferences.Wgs84), redCircleSymbol);
+            Graphic graphic = new Graphic(new MapPoint(-117.1842782, 34.0535806, SpatialReferences.Wgs84), text1);
             _overlay.Graphics.Add(graphic);
 
-            graphic = new Graphic(new MapPoint(-2.69, 56.065, SpatialReferences.Wgs84), redCircleSymbol);
+            
+            graphic = new Graphic(new MapPoint(-117.1839386, 34.0526897, SpatialReferences.Wgs84), text2);
             _overlay.Graphics.Add(graphic);
 
-            graphic = new Graphic(new MapPoint(-2.66, 56.065, SpatialReferences.Wgs84), redCircleSymbol);
+            graphic = new Graphic(new MapPoint(-117.1827502, 34.0529242, SpatialReferences.Wgs84), text3);
             _overlay.Graphics.Add(graphic);
 
-            graphic = new Graphic(new MapPoint(-2.63, 56.065, SpatialReferences.Wgs84), redCircleSymbol);
+            graphic = new Graphic(new MapPoint(-117.1822409, 34.0530648, SpatialReferences.Wgs84), text4);
+            _overlay.Graphics.Add(graphic);
+
+            graphic = new Graphic(new MapPoint(-117.1816750, 34.0529710, SpatialReferences.Wgs84), text5);
             _overlay.Graphics.Add(graphic);
         }
 
