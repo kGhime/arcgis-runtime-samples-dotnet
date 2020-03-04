@@ -62,33 +62,32 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
 
             // Create graphics and add them to graphics overlay
 
-            var text1 = new TextSymbol("AAAA", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
-                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
-            var text2 = new TextSymbol("BBBB", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
-                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
-            var text3 = new TextSymbol("CCCC", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
-                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
-            var text4 = new TextSymbol("DDDD", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
-                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
-            var text5 = new TextSymbol("EEEE", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
-                                 Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            //var text1 = new TextSymbol("AAAA", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+            //                     Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            //var text2 = new TextSymbol("BBBB", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+            //                     Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            //var text3 = new TextSymbol("CCCC", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+            //                     Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            //var text4 = new TextSymbol("DDDD", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+            //                     Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
+            //var text5 = new TextSymbol("EEEE", Color.FromArgb(255, 0, 0, 230), 20, Esri.ArcGISRuntime.Symbology.HorizontalAlignment.Left,
+            //                     Esri.ArcGISRuntime.Symbology.VerticalAlignment.Bottom);
 
-
-            //Graphic graphic = new Graphic(new MapPoint(-117.1842782, 34.0535806, SpatialReferences.Wgs84), redCircleSymbol);
-            Graphic graphic = new Graphic(new MapPoint(-117.1842782, 34.0535806, SpatialReferences.Wgs84), text1);
-            _overlay.Graphics.Add(graphic);
 
             
-            graphic = new Graphic(new MapPoint(-117.1839386, 34.0526897, SpatialReferences.Wgs84), text2);
+            Graphic graphic = new Graphic(new MapPoint(-117.1842782, 34.0535806, SpatialReferences.Wgs84), redCircleSymbol);
+            _overlay.Graphics.Add(graphic);
+            
+            graphic = new Graphic(new MapPoint(-117.1839386, 34.0526897, SpatialReferences.Wgs84), redCircleSymbol);
             _overlay.Graphics.Add(graphic);
 
-            graphic = new Graphic(new MapPoint(-117.1827502, 34.0529242, SpatialReferences.Wgs84), text3);
+            graphic = new Graphic(new MapPoint(-117.1827502, 34.0529242, SpatialReferences.Wgs84), redCircleSymbol);
             _overlay.Graphics.Add(graphic);
 
-            graphic = new Graphic(new MapPoint(-117.1822409, 34.0530648, SpatialReferences.Wgs84), text4);
+            graphic = new Graphic(new MapPoint(-117.1822409, 34.0530648, SpatialReferences.Wgs84), redCircleSymbol);
             _overlay.Graphics.Add(graphic);
 
-            graphic = new Graphic(new MapPoint(-117.1816750, 34.0529710, SpatialReferences.Wgs84), text5);
+            graphic = new Graphic(new MapPoint(-117.1816750, 34.0529710, SpatialReferences.Wgs84), redCircleSymbol);
             _overlay.Graphics.Add(graphic);
         }
 
