@@ -42,12 +42,22 @@ namespace ArcGISRuntime.Samples.AuthorMap
     [ArcGISRuntime.Samples.Shared.Attributes.XamlFiles("SaveMapPage.xaml")]
     public partial class AuthorMap : ContentPage, IOAuthAuthorizeHandler
     {
+        //// OAuth-related values ...
+        //// URL of the server to authenticate with (ArcGIS Online)
+        //private const string ArcGISOnlineUrl = "https://www.arcgis.com/sharing/rest";
+
+        //// Client ID for the app registered with the server (Portal Maps)
+        //public static string AppClientId = "lgAdHkYZYlwwfAhC";
+
+        //// Redirect URL after a successful authorization (configured for the Portal Maps application)
+        //private string _oAuthRedirectUrl = "my-ags-app://auth";
+
         // OAuth-related values ...
         // URL of the server to authenticate with (ArcGIS Online)
-        private const string ArcGISOnlineUrl = "https://www.arcgis.com/sharing/rest";
+        private const string ArcGISOnlineUrl = "https://philip.support.geocloud.com/portal/sharing/rest";
 
         // Client ID for the app registered with the server (Portal Maps)
-        public static string AppClientId = "lgAdHkYZYlwwfAhC";
+        public static string AppClientId = "tBjbp2NBwUUzfYi1";
 
         // Redirect URL after a successful authorization (configured for the Portal Maps application)
         private string _oAuthRedirectUrl = "my-ags-app://auth";

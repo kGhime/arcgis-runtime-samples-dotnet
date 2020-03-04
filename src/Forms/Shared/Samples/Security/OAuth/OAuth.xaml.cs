@@ -39,6 +39,8 @@ namespace ArcGISRuntime.Samples.OAuth
            "Authentication, Security, OAuth")]
     public partial class OAuth : ContentPage, IOAuthAuthorizeHandler
     {
+        private readonly string _agolAuthorizeUrl = @"https://philip.support.geocloud.com/portal/sharing/rest/oauth2/authorize";
+        private readonly string _agolTokenUrl = @"https://philip.support.geocloud.com/portal/sharing/rest/oauth2/token";
         //// Constants for OAuth-related values.
         //// - The URL of the portal to authenticate with
         //private const string ServerUrl = "https://www.arcgis.com/sharing/rest";
@@ -63,17 +65,29 @@ namespace ArcGISRuntime.Samples.OAuth
         //// - The ID for a web map item hosted on the server (the ID below is for a traffic map of Paris).
         //private const string WebMapId = "e5039444ef3c48b8a8fdc9227f9be7c1";
 
+        //// constants for oauth-related values.
+        //// - the url of the portal to authenticate with
+        //private const string ServerUrl = "https://philip.support.geocloud.com/portal/sharing/rest";
+        //// - the client id for an app registered with the server (the id below is for a public app created by the arcgis runtime team).
+        //private const string AppClientId = @"e3KWTMTqRqr3vGYZ";
+        //// - an optional client secret for the app (only needed for the oauthauthorizationcode authorization type).
+        //private const string ClientSecret = "7f281c9051824ee48561ad35846c7627";
+        //// - a url for redirecting after a successful authorization (this must be a url configured with the app).
+        //private const string OAuthRedirectUrl = @"my-ags-app://auth/";
+        //// - the id for a web map item hosted on the server (the id below is for a traffic map of paris).
+        //private const string WebMapId = "0302797377c74ed48be0db30f8e80d12";
+
         // Constants for OAuth-related values.
         // - The URL of the portal to authenticate with
-        private const string ServerUrl = "https://philip.support.geocloud.com/portal/sharing/rest";
+        private const string ServerUrl = "https://kghime.esri.com/portal";
         // - The Client ID for an app registered with the server (the ID below is for a public app created by the ArcGIS Runtime team).
-        private const string AppClientId = @"tBjbp2NBwUUzfYi1";
+        private const string AppClientId = @"mwhsaTc9FyCwGweF";
         // - An optional client secret for the app (only needed for the OAuthAuthorizationCode authorization type).
-        private const string ClientSecret = "";
+        private const string ClientSecret = "48ae516931894ef086c2f170641feca4";
         // - A URL for redirecting after a successful authorization (this must be a URL configured with the app).
         private const string OAuthRedirectUrl = @"my-ags-app://auth";
         // - The ID for a web map item hosted on the server (the ID below is for a traffic map of Paris).
-        private const string WebMapId = "b7cd533699254243a0c5edbd48ffeb22";
+        private const string WebMapId = "179e26a424ca4729abdb5bd978e37246";
 
         public OAuth()
         {
@@ -114,7 +128,8 @@ namespace ArcGISRuntime.Samples.OAuth
             ServerInfo serverInfo = new ServerInfo
             {
                 ServerUri = new Uri(ServerUrl),
-                TokenAuthenticationType = TokenAuthenticationType.OAuthImplicit,
+                //TokenAuthenticationType = TokenAuthenticationType.OAuthImplicit,
+                TokenAuthenticationType = TokenAuthenticationType.OAuthAuthorizationCode,
                 OAuthClientInfo = new OAuthClientInfo
                 {
                     ClientId = AppClientId,
@@ -195,9 +210,12 @@ namespace ArcGISRuntime.Samples.OAuth
             // Create a new Xamarin.Auth.OAuth2Authenticator using the information passed in.
             OAuth2Authenticator authenticator = new OAuth2Authenticator(
                 clientId: AppClientId,
+                clientSecret: ClientSecret,
                 scope: "",
-                authorizeUrl: authorizeUri,
-                redirectUrl: callbackUri)
+                //authorizeUrl: authorizeUri,
+                authorizeUrl: new Uri(_agolAuthorizeUrl),
+                redirectUrl: callbackUri,
+                accessTokenUrl: new Uri(_agolTokenUrl))
             {
                 ShowErrors = false,
                 // Allow the user to cancel the OAuth attempt.
