@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcGISRuntime.UWP.Viewer", "ArcGISRuntime.UWP.Viewer\ArcGISRuntime.UWP.Viewer.csproj", "{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}"
 EndProject
@@ -36,6 +36,7 @@ Global
 		{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}.Debug|x86.Build.0 = Debug|x86
 		{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}.Debug|x86.Deploy.0 = Debug|x86
 		{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}.Release|Any CPU.ActiveCfg = Release|x86
+		{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}.Release|Any CPU.Deploy.0 = Release|x86
 		{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}.Release|ARM.ActiveCfg = Release|ARM
 		{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}.Release|ARM.Build.0 = Release|ARM
 		{BE5076AF-ECE0-4EA9-994E-37BAD4B19828}.Release|ARM.Deploy.0 = Release|ARM
