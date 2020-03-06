@@ -12,6 +12,7 @@ using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System.Drawing;
+using System.Text;
 
 namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
 {
@@ -89,6 +90,36 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
 
             graphic = new Graphic(new MapPoint(-117.1816750, 34.0529710, SpatialReferences.Wgs84), redCircleSymbol);
             _overlay.Graphics.Add(graphic);
+
+            // Create a StringBuilder to create the label definition JSON string
+            StringBuilder addressLabelsBuilder = new StringBuilder();
+            addressLabelsBuilder.AppendLine("{");
+            //     Define a labeling expression that will show the address attribute value
+            addressLabelsBuilder.AppendLine("\"labelExpressionInfo\": {");
+            addressLabelsBuilder.AppendLine("\"expression\": \"AAAAA\"},");
+            //     Align labels horizontally
+            addressLabelsBuilder.AppendLine("\"labelPlacement\": \"esriServerPolygonPlacementAlwaysHorizontal\",");
+            //     Use a green bold text symbol
+            addressLabelsBuilder.AppendLine("\"symbol\": {");
+            addressLabelsBuilder.AppendLine("\"color\": [0,255,50,255],");
+            addressLabelsBuilder.AppendLine("\"font\": {\"size\": 18, \"weight\": \"bold\"},");
+            addressLabelsBuilder.AppendLine("\"type\": \"esriTS\"}");
+            addressLabelsBuilder.AppendLine("}");
+
+            // Get the label definition string
+            var addressLabelsJson = addressLabelsBuilder.ToString();
+
+            // Create a new LabelDefintion object using the static FromJson method
+            LabelDefinition labelDef = LabelDefinition.FromJson(addressLabelsJson);
+
+            // Clear the current collection of label definitions (if any)
+            _overlay.LabelDefinitions.Clear();
+
+            // Add this label definition to the collection
+            _overlay.LabelDefinitions.Add(labelDef);
+
+            // Make sure labeling is enabled for the layer
+            _overlay.LabelsEnabled = true;
         }
 
         private void CreatePolyline()
