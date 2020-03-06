@@ -70,7 +70,6 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
 
             graphic = new Graphic(new MapPoint(-2.63, 56.065, SpatialReferences.Wgs84), redCircleSymbol);
             _overlay.Graphics.Add(graphic);
-
         }
 
         private void CreatePolyline()
