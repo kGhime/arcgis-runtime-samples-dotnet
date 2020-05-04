@@ -77,8 +77,7 @@ namespace ArcGISRuntime.WPF.Samples.AddGraphicsWithSymbols
             //Graphic graphic = new Graphic(new MapPoint(-117.1842782, 34.0535806, SpatialReferences.Wgs84), redCircleSymbol);
             Graphic graphic = new Graphic(new MapPoint(-117.1842782, 34.0535806, SpatialReferences.Wgs84), text1);
             _overlay.Graphics.Add(graphic);
-
-            
+                        
             graphic = new Graphic(new MapPoint(-117.1839386, 34.0526897, SpatialReferences.Wgs84), text2);
             _overlay.Graphics.Add(graphic);
 
