@@ -33,6 +33,7 @@ namespace ArcGISRuntime.WPF.Samples.OpenMobileMap
         {
             // Get the path to the mobile map package.
             string filepath = GetMmpkPath();
+            
 
             try
             {
